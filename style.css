@@ -18,7 +18,7 @@ background-color: green;
 }
 
 #color3 {
-background-color: orange;
+background-color: yellow;
 }
 
 #color4 {
@@ -29,3 +29,25 @@ background-color: red;
 #button-random-color {
     
 }
+
+#pixel-board {
+margin: 0px;
+margin-left: 10px;
+margin-top: 10px;
+width: 25%;
+background-color: white;
+}
+
+.pixel {
+    border: black solid 1px;
+    display: inline-block;
+    width: 40px;
+    height: 40px; 
+    background-color: white;
+
+}
+
+#first-line {
+
+}
+
