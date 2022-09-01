@@ -9,8 +9,8 @@ height: 50px;
 
 }
 
-#color1 {
-background-color: blue;
+#black {
+background-color: rgb(0, 0, 0);
 }
 
 #color2 {
@@ -24,4 +24,8 @@ background-color: orange;
 #color4 {
 background-color: red;
 
+}
+
+#button-random-color {
+    
 }
