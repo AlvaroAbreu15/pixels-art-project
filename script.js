@@ -25,7 +25,7 @@
       
       
  })
- /*function recovered () {
+ function recovered () {
    let recoveredArray = JSON.parse(localStorage.getItem('colorPalette'));
    cor1 = recoveredArray[0];
    cor2 = recoveredArray[1];
@@ -35,25 +35,43 @@
    document.querySelector('#color4').style.backgroundColor = cor3;
  }
    recovered();
-   */
+
 }
 
 
- let elementoFilho = document.querySelector('#color-palette').children;
- console.log(elementoFilho);
- let elemento = document.getElementById('color2');
-  elemento.addEventListener('click', function() {  
-   
+ let listaDeElementos = document.querySelectorAll('.color');
 
+for (let i = 0; i <= listaDeElementos.length ; i += 1){
+
+  listaDeElementos[i].addEventListener('click', function(){
+   if  ( (i === 0) && (listaDeElementos[0].className = 'color') ){
+      listaDeElementos[0].classList.add('selected');
+      listaDeElementos[3].classList.remove('selected');
+      listaDeElementos[1].classList.remove('selected');
+      elementoFilho[2].classList.remove('selected'); 
+   } 
+   else if ( (i === 1) && (listaDeElementos[1].className = 'color') ){
+      listaDeElementos[1].classList.add('selected');
+      listaDeElementos[0].classList.remove('selected');
+      listaDeElementos[2].classList.remove('selected');
+      listaDeElementos[3].classList.remove('selected');  
+   } 
+   else if ( (i === 2) && (listaDeElementos[2].className = 'color')){
+      listaDeElementos[2].classList.add('selected');
+      listaDeElementos[0].classList.remove('selected');
+      listaDeElementos[1].classList.remove('selected');
+      listaDeElementos[3].classList.remove('selected');
+   } else if ( (i === 3) && (listaDeElementos[3].className = 'color')){
+      listaDeElementos[3].classList.add('selected');
+      listaDeElementos[0].classList.remove('selected');
+      listaDeElementos[1].classList.remove('selected');
+      listaDeElementos[2].classList.remove('selected');
+   }
+  })
+}
    
     
-      if (elementoFilho[1].classList = 'color') {
-         elementoFilho[1].classList.add('selected')
-      } 
-        
-   
-
-    });
+     
     
  
 
