@@ -6,7 +6,8 @@ height: 50px;
 }
 
 #color-palette {
-
+margin-left: 560px;
+background-color: white;
 }
 
 #black {
@@ -27,13 +28,15 @@ background-color: red;
 }
 
 #button-random-color {
-    
+    text-align: center;
+    margin-left: 610px;
+    margin-top: 20px;
 }
 
 #pixel-board {
 margin: 0px;
-margin-left: 10px;
-margin-top: 10px;
+margin-left: 560px;
+margin-top: 50px;
 width: 25%;
 background-color: white;
 }
@@ -47,7 +50,7 @@ background-color: white;
 
 }
 
-#first-line {
 
+#title {
+    text-align: center;
 }
-
