@@ -22,7 +22,7 @@ function randomColor(){
    const colorPalette = [corBloco2, corBloco3, corBloco4];
   
    localStorage.setItem('colorPalette', JSON.stringify(colorPalette));
-   console.log(localStorage.colorPalette);
+   
 }
 
 function recoveredColor() {
@@ -36,6 +36,7 @@ function recoveredColor() {
    }
 }
 recoveredColor();
+
 
 let listaDeElementos = document.querySelectorAll('.color');
 
@@ -65,14 +66,64 @@ for (let i = 0; i < listaDeElementos.length ; i += 1){
       listaDeElementos[1].classList.remove('selected');
       listaDeElementos[2].classList.remove('selected');
    }
-  })
+  });
 } 
+
+function paint() {
+let botoes = document.querySelectorAll('.color');
+
+let pixels = document.querySelectorAll('.pixel');
+
+for (let i = 0 ; i < botoes.length ; i += 1) {
      
+    botoes[i].addEventListener('click', function() {
     
- 
+    for (let index = 0 ; index < pixels.length ; index += 1) {
+
+      if (botoes[1].className === 'color selected' ) {
+   
+         pixels[index].addEventListener('click', function(){
+            if (localStorage.colorPalette !== undefined) {
+
+             let recoveredColor1 = JSON.parse(localStorage.getItem('colorPalette'));
+             pixels[index].style.backgroundColor = recoveredColor1[0];
+            }
+        });
+       }
+        else if (botoes[0].className === 'color selected') {
+         
+        pixels[index].addEventListener('click', function(){
+        pixels[index].style.backgroundColor = 'black';
+        
+        });
+        
+       }
+        else if (botoes[2].className === 'color selected' ) {
+         
+            pixels[index].addEventListener('click', function(){
+             if (localStorage.colorPalette !== undefined) {
+              let recoveredColor1 = JSON.parse(localStorage.getItem('colorPalette'));
+              pixels[index].style.backgroundColor = recoveredColor1[1];
+             }
+            });
+         
+      } else if (botoes[3].className === 'color selected' ) {
+         
+            pixels[index].addEventListener('click', function(){
+            if (localStorage.colorPalette !== undefined)   {
+              let recoveredColor1 = JSON.parse(localStorage.getItem('colorPalette'));
+              pixels[index].style.backgroundColor = recoveredColor1[2];
+            }
+            });
+         
+      } 
+   }
+   });
+   
+ }
+
+}
 
 
- 
 
-
-
+paint();
