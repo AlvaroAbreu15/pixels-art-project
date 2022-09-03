@@ -69,10 +69,20 @@ for (let i = 0; i < listaDeElementos.length ; i += 1){
   });
 } 
 
-function paint() {
-let botoes = document.querySelectorAll('.color');
 
+let botoes = document.querySelectorAll('.color');
 let pixels = document.querySelectorAll('.pixel');
+
+for (let indice = 0; indice < pixels.length; indice += 1){
+ botoes[0].classList.add('selected');
+   pixels[indice].addEventListener('click', function(){
+   pixels[indice].style.backgroundColor = 'rgb(0, 0, 0)';
+   
+   });
+
+}
+
+
 
 for (let i = 0 ; i < botoes.length ; i += 1) {
      
@@ -91,9 +101,9 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
         });
        }
         else if (botoes[0].className === 'color selected') {
-         
+         botoes[0].classList.add('selected');
         pixels[index].addEventListener('click', function(){
-        pixels[index].style.backgroundColor = 'black';
+        pixels[index].style.backgroundColor = 'rgb(0, 0, 0)';
         
         });
         
@@ -122,8 +132,7 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
    
  }
 
-}
 
 
 
-paint();
+
