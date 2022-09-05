@@ -121,6 +121,9 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
 
              let recoveredColor1 = JSON.parse(localStorage.getItem('colorPalette'));
              pixels[index].style.backgroundColor = recoveredColor1[0];
+            } else {
+               pixels[index].style.backgroundColor = 'green';
+                
             }
         });
        }  
@@ -130,6 +133,9 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
              if (localStorage.colorPalette !== undefined) {
               let recoveredColor1 = JSON.parse(localStorage.getItem('colorPalette'));
               pixels[index].style.backgroundColor = recoveredColor1[1];
+             } else {
+
+               pixels[index].style.backgroundColor = 'yellow';
              }
             });
          
@@ -139,6 +145,8 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
             if (localStorage.colorPalette !== undefined)   {
               let recoveredColor1 = JSON.parse(localStorage.getItem('colorPalette'));
               pixels[index].style.backgroundColor = recoveredColor1[2];
+            } else {
+               pixels[index].style.backgroundColor = 'red';
             }
             });
          
