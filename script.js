@@ -1,3 +1,19 @@
+let black = document.getElementById('black');
+
+black.style.backgroundColor = 'black';
+
+let color2 = document.getElementById('color2');
+
+color2.style.backgroundColor = 'green';
+
+
+let color3 = document.getElementById('color3');
+
+color3.style.backgroundColor = 'yellow';
+
+let color4 = document.getElementById('color4');
+
+color4.style.backgroundColor = 'red';
 
 const button = document.getElementById('button-random-color');
 
@@ -90,7 +106,15 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
     
     for (let index = 0 ; index < pixels.length ; index += 1) {
 
-      if (botoes[1].className === 'color selected' ) {
+      
+         if (botoes[0].className === 'color selected') {
+         botoes[0].classList.add('selected');
+        pixels[index].addEventListener('click', function(){
+        pixels[index].style.backgroundColor = 'rgb(0, 0, 0)';
+        
+        });
+      }
+         else if (botoes[1].className === 'color selected' ) {
    
          pixels[index].addEventListener('click', function(){
             if (localStorage.colorPalette !== undefined) {
@@ -99,15 +123,7 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
              pixels[index].style.backgroundColor = recoveredColor1[0];
             }
         });
-       }
-        else if (botoes[0].className === 'color selected') {
-         botoes[0].classList.add('selected');
-        pixels[index].addEventListener('click', function(){
-        pixels[index].style.backgroundColor = 'rgb(0, 0, 0)';
-        
-        });
-        
-       }
+       }  
         else if (botoes[2].className === 'color selected' ) {
          
             pixels[index].addEventListener('click', function(){
@@ -135,4 +151,21 @@ for (let i = 0 ; i < botoes.length ; i += 1) {
 
 
 
+let buttonClear = document.createElement('button');
+let section = document.getElementById('section');
 
+buttonClear.innerHTML = 'Limpar';
+buttonClear.id = 'clear-board';
+section.appendChild(buttonClear);
+
+
+buttonClear.addEventListener('click', function() {
+   let quadro = document.querySelectorAll('.pixel');
+for(let i = 0; i < quadro.length ; i += 1){
+
+quadro[i].style.backgroundColor = 'white';
+
+}
+
+
+});
