@@ -177,3 +177,36 @@ quadro[i].style.backgroundColor = 'white';
 
 
 });
+function saveDraw () {
+let pix = document.querySelectorAll('.pixel');
+let color = [];
+for (let i =0 ; i < pix.length ; i += 1){
+
+let save = pix[i].style.backgroundColor;
+color.push(save);
+
+localStorage.setItem('pixelBoard', JSON.stringify(color));
+}
+
+}
+
+function getDraw () {
+
+
+let draw = JSON.parse(localStorage.getItem('pixelBoard'))
+
+if (localStorage.pixelBoard !== undefined) {
+   
+for (let index = 0 ; index < draw.length ; index += 1){
+   let pixel = document.querySelectorAll('.pixel');
+   pixel[index].style.backgroundColor = draw[index];
+}
+
+
+}
+
+}
+
+let boarded = document.querySelector('#pixel-board');
+boarded.addEventListener('click', saveDraw);
+getDraw();
