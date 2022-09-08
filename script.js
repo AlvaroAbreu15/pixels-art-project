@@ -1,3 +1,19 @@
+function initial () {
+   const initial = 5;
+   const initialSize = (initial * initial);
+   for (let index = 0; index < initialSize ; index += 1) {
+   
+   let divInitial = document.createElement('div');
+   divInitial.className = 'pixel';
+   document.getElementById('pixel-board').appendChild(divInitial);
+   
+   
+   }
+   }
+
+initial();
+
+
 let black = document.getElementById('black');
 
 black.style.backgroundColor = 'black';
@@ -84,6 +100,8 @@ for (let i = 0; i < listaDeElementos.length ; i += 1){
    }
   });
 } 
+
+
 
 
 let botoes = document.querySelectorAll('.color');
@@ -195,7 +213,7 @@ function getDraw () {
 
 let draw = JSON.parse(localStorage.getItem('pixelBoard'))
 
-if (localStorage.pixelBoard !== undefined) {
+if (localStorage.pixelBoard !== null) {
    
 for (let index = 0 ; index < draw.length ; index += 1){
    let pixel = document.querySelectorAll('.pixel');
@@ -209,4 +227,28 @@ for (let index = 0 ; index < draw.length ; index += 1){
 
 let boarded = document.querySelector('#pixel-board');
 boarded.addEventListener('click', saveDraw);
+
 getDraw();
+
+
+
+
+let buttonGenerate = document.getElementById('generate-board');
+
+function size () {
+ let sizeBoard = document.getElementById('board-size').value;
+ 
+ 
+ 
+ const sizeSquare = (sizeBoard * sizeBoard) - 25;
+for (let i = 0; i < sizeSquare ; i += 1) {
+
+let div = document.createElement('div');
+ div.className = 'pixel';
+
+document.getElementById('pixel-board').appendChild(div);
+ }
+}
+
+
+buttonGenerate.addEventListener('click', size);
